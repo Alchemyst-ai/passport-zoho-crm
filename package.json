@@ -1,7 +1,7 @@
 {
-  "name": "passport-zoho-crm",
+  "name": "zoho-crm-passport",
   "version": "0.1.2",
-  "description": "Zoho CRM authentication strategy for Passport.",
+  "description": "Zoho CRM authentication strategy for Passport. Forked from passport-zoho-crm",
   "keywords": [
     "passport",
     "zohocrm",
@@ -11,16 +11,16 @@
     "identity"
   ],
   "author": {
-    "name": "Sid Ramesh",
-    "email": "sidrmsh@gmail.com",
-    "url": "http://www.siddarthramesh.com"
+    "name": "Anuran Roy",
+    "email": "anuran@getalchemystai.com",
+    "url": "http://getalchemystai.com"
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/siddarthramesh/passport-zoho-crm.git"
+    "url": "http://github.com/alchemyst-ai/passport-zoho-crm.git"
   },
   "bugs": {
-    "url": "http://github.com/jaredhanson/passport-zoho-crm/issues"
+    "url": "http://github.com/alchemyst-ai/passport-zoho-crm/issues"
   },
   "license": "MIT",
   "licenses": [
@@ -29,21 +29,32 @@
       "url": "http://opensource.org/licenses/MIT"
     }
   ],
-  "main": "./lib",
+  "main": "./dist/lib/index.js",
+  "types": "./dist/lib/index.d.ts",
   "dependencies": {
     "passport-oauth2": "1.x.x"
   },
   "devDependencies": {
-    "make-node": "0.3.x",
-    "mocha": "1.x.x",
+    "@types/express": "^5.0.0",
+    "@types/passport": "^1.0.17",
+    "@types/passport-oauth2": "^1.4.17",
     "chai": "2.x.x",
     "chai-passport-strategy": "1.x.x",
-    "proxyquire": "1.4.x"
+    "make-node": "0.3.x",
+    "mocha": "1.x.x",
+    "node": "^23.7.0",
+    "proxyquire": "1.4.x",
+    "tslib": "^2.8.1",
+    "ts-node": "^10.9.2",
+    "tsc-alias": "^1.8.10",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.7.2"
   },
   "engines": {
     "node": ">= 0.4.0"
   },
   "scripts": {
-    "test": "node_modules/.bin/mocha --require test/bootstrap/node test/*.test.js"
+    "test": "node_modules/.bin/mocha --require test/bootstrap/node test/*.test.js",
+    "build": "tsc -p tsconfig.json"
   }
 }
